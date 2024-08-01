@@ -4,7 +4,7 @@ const Admin = require("./AdminModel");
 
 const router = express.Router();
 
-route.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.json({ message: "hello world" });
 });
 router.post("/login", async (req, res) => {
