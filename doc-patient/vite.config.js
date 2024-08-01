@@ -15,9 +15,9 @@ export default defineConfig({
     host: "localhost", // Change this line
     port: 3000,
   },
-  build: {
-    rollupOptions: {
-      external: ["papaparse", "react-datepicker"],
-    },
-  },
+  // build: {
+  //   rollupOptions: {
+  //     external: ["papaparse", "react-datepicker"],
+  //   },
+  // },
 });
