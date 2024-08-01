@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3002;
 const uri = process.env.MONGODB_URI;
 
 app.use(cors({
-  origin: 'https://medouss.vercel.app/', // specify your frontend domain
+  origin: '*', // specify your frontend domain
 }));
 app.use(helmet());
 app.use(express.json());
