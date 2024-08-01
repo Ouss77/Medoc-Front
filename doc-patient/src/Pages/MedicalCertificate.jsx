@@ -8,6 +8,7 @@ const MedicalCertificate = () => {
     <div className="p-8 max-w-2xl mx-auto bg-white shadow-md rounded-md border">
       <header className="flex justify-between items-center mb-8">
         <div className="text-left w-56">
+          
           <h1 className="text-xl font-bold w-screen">Docteur SASSOUR Mohammed</h1>
           <p className="text-sm">Ancien Médecin militaire lt Colonel</p>
           <p className="text-sm">Médecine Générale</p>
