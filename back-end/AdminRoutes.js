@@ -1,9 +1,12 @@
 const express = require("express");
-const bcrypt = require("bcrypt"); 
+const bcrypt = require("bcrypt");
 const Admin = require("./AdminModel");
 
 const router = express.Router();
 
+route.get("/", (req, res) => {
+  res.json({ message: "hello world" });
+});
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -24,7 +27,9 @@ router.post("/login", async (req, res) => {
         .json({ message: "Authentication failed. Wrong password." });
     }
   } catch (error) {
-    res.status(500).json({ message: "Internal server error", error: error.message });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: error.message });
   }
 });
 
@@ -32,7 +37,7 @@ router.post("/login", async (req, res) => {
 router.post("/adduser", async (req, res) => {
   try {
     const { username, password } = req.body; // Get username and password from the request body
-   const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new Admin({
       username: username,
       password: hashedPassword,
@@ -41,9 +46,10 @@ router.post("/adduser", async (req, res) => {
     const user = await newUser.save();
     res.status(201).json(user);
   } catch (err) {
-    res.status(500).json({ message: "Internal server error", error: err.message });
+    res
+      .status(500)
+      .json({ message: "Internal server error", error: err.message });
   }
 });
-
 
 module.exports = router;
