@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function PatientSearch({ onAddToQueue }) {
+function PatientSearch({ onAddToQueue, SuccessAdd }) {
     const [patients, setPatients] = useState([]);
     const [filteredPatients, setFilteredPatients] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
