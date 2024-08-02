@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Form from "./Form";
+import {useNavigate} from 'react-router-dom'
 
 function AddPatient() {
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const navigate = useNavigate();
 
   const [userData, setUserData] = useState({
     nom: "",
@@ -22,7 +24,7 @@ const handleChange = (event) => {
 useEffect(() => {
 
   if(userData === null){
-    window.location.reload();
+   navigate('/')
   }
  
 },[userData]);
