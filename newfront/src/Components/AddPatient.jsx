@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Form from "./Form";
 
@@ -18,6 +18,14 @@ const handleChange = (event) => {
   const { name, value } = event.target;
   setUserData({ ...userData, [name]: value });
 };
+
+useEffect(() => {
+
+  if(userData === null){
+    window.location.reload();
+  }
+ 
+},[userData]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
