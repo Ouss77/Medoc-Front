@@ -56,7 +56,7 @@ useEffect(() => {
         CIN: ""
 
       });
-      window.location.reload(); // Refresh the page
+      // Refresh the page
 
     } catch (error) {
       console.error("Error adding user:", error);
