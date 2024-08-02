@@ -21,13 +21,7 @@ const handleChange = (event) => {
   setUserData({ ...userData, [name]: value });
 };
 
-useEffect(() => {
 
-  if(userData === null){
-   navigate('/')
-  }
- 
-},[userData]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -57,6 +51,8 @@ useEffect(() => {
 
       });
       // Refresh the page
+
+      navigate('/patient');
 
     } catch (error) {
       console.error("Error adding user:", error);
