@@ -52,7 +52,7 @@ const handleChange = (event) => {
       });
       // Refresh the page
 
-      navigate('/patient');
+      navigate('/Patient');
 
     } catch (error) {
       console.error("Error adding user:", error);
