@@ -5,6 +5,7 @@ const visitRoutes = require('./VisitRoutes');
 const adminRoutes = require('./AdminRoutes');
 const cors = require('cors');
 const helmet = require('helmet');
+const cookieParser = require('cookie-parser');
 require('dotenv').config();
 
 const app = express();
@@ -15,6 +16,7 @@ const uri = process.env.MONGODB_URI;
 app.use(cors({
   origin: '*', // specify your frontend domain
 }));
+app.use(cookieParser())
 app.use(helmet());
 app.use(express.json());
 app.use('/api/users', userRoutes);
