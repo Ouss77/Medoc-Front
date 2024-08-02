@@ -4,7 +4,7 @@ import doc2 from '../assets/doc2.jpg'
 
 function About() {
   return (
-    <dispatchEvent>
+    <>
 <Header/>
           <section className="overflow-hidden pt-20 pb-12 lg:pt-[60px] lg:pb-[90px] bg-white dark:bg-dark bg-[url('./assets/doc.jpg')] h-full bg-no-repeat bg-cover ">
         <div className="container mx-auto">
@@ -60,7 +60,7 @@ function About() {
           </div>
         </div>
       </section>
-    </dispatchEvent>
+    </>
   
   )
 }
