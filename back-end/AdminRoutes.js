@@ -7,6 +7,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.json({ message: "hello world" });
 });
+
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;
