@@ -27,7 +27,7 @@ function PatientDetails({ id, onClose }) {
     <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50 z-50">
       <div className="bg-white dark:bg-gray-800 rounded-lg p-8 max-w-4xl w-full">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-bold">Patient Details</h2>
+          <h2 className="text-xl font-bold text-blue-300">Patient Details</h2>
           <button onClick={onClose} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -44,13 +44,13 @@ function PatientDetails({ id, onClose }) {
                 <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                   Mutuelle
                 </th>
-                <th scope="col" className="px-6 py-3 bg-blue-50 dark:bg-blue-800">
+                <th scope="col" className="px-6 py-3 bg-blue-50 dark:bg-gray-800">
                   Motif
                 </th>
                 <th scope="col" className="px-6 py-3 bg-gray-50 dark:bg-gray-800">
                   Diagnostic
                 </th>
-                <th scope="col" className="px-6 py-3 bg-blue-50 dark:bg-blue-800">
+                <th scope="col" className="px-6 py-3 bg-blue-50 dark:bg-gray-800">
                   Traitement
                 </th>
               </tr>
@@ -61,7 +61,7 @@ function PatientDetails({ id, onClose }) {
                   <td className="px-6 py-4 bg-blue-50 dark:bg-blue-800">{patient.id}</td>
                   <td className="px-6 py-4 bg-blue-50 dark:bg-blue-800">{patient.mutuelle}</td>
                   <td className="px-6 py-4 bg-blue-50 dark:bg-blue-800">{patient.motif}</td>
-                  <td className="px-6 py-4 bg-gray-50 dark:bg-gray-800">{patient.diagnostic}</td>
+                  <td className="px-6 py-4 bg-gray-50 dark:bg-blue-800">{patient.diagnostic}</td>
                   <td className="px-6 py-4 bg-blue-50 dark:bg-blue-800">{patient.traitement}</td>
                 </tr>
               ))}

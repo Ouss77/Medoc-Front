@@ -16,17 +16,15 @@ const uri = process.env.MONGODB_URI;
 app.use(cors({
   origin: '*', // specify your frontend domain
 }));
-app.use(cookieParser())
+app.use(cookieParser());
 app.use(helmet());
 app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api', visitRoutes);
 app.use('/', adminRoutes);
 
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+// Connect to MongoDB
+mongoose.connect(uri)
   .then(() => {
     console.log("Connected to MongoDB");
   })

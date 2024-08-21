@@ -62,7 +62,7 @@ function EditForm({ userId, onCancel, userData: initialUserData, onEditComplete 
               name="prenom"
               value={userData.prenom}
               onChange={handleChange}
-              placeholder="Enter telephone number"
+              placeholder="Entrer votre nom"
             />
           </div>
         </div>

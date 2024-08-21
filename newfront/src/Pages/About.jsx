@@ -44,7 +44,7 @@ function About() {
                 <span className="block mb-4 text-lg font-semibold text-primary">
                   Qui est Mohammed Sassour ?
                 </span>
-                <h2 className="mb-5 text-3xl font-bold text-dark dark:text-white sm:text-[40px]/[48px]">
+                <h2 className="mb-5 text-3xl font-bold text-dark dark:text-blue-900 sm:text-[40px]/[48px]">
                   Consulte le Medecin Mohammed Sassour
                 </h2>
                 <p className="mb-5 text-base text-body-color dark:text-dark-6">

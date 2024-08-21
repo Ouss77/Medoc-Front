@@ -36,7 +36,28 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/getPatientId', async (req, res) => {
+  try {
+    const { nom, prenom } = req.query; // Get nom and prenom from query parameters
 
+    if (!nom || !prenom) {
+      return res.status(400).json({ message: 'Nom and prenom are required' });
+    }
+
+    // Find the patient by nom and prenom
+    const patient = await Patient.findOne({ nom: nom, prenom: prenom }, '_id');
+
+    if (!patient) {
+      return res.status(404).json({ message: 'Patient not found' });
+    }
+
+    // Return the patient's ID
+    res.json({ id: patient._id });
+  } catch (error) {
+    console.error('Error retrieving patient ID:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
 //Search patients by name
 router.get('/medicalInfo/:patientId', async (req, res) => {
   try {

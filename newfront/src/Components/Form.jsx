@@ -41,7 +41,7 @@ function Form({ userData, handleChange, handleSubmit, showSuccessAlert }) {
               name="nom"
               value={userData.nom}
               onChange={handleChange}
-              placeholder="Jane Doe"
+              placeholder="Entre le nom"
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
@@ -58,7 +58,7 @@ function Form({ userData, handleChange, handleSubmit, showSuccessAlert }) {
               name="prenom"
               value={userData.prenom}
               onChange={handleChange}
-              placeholder="Enter telephone number"
+              placeholder="Entrer le prenom"
             />
           </div>
         </div>
@@ -112,7 +112,7 @@ function Form({ userData, handleChange, handleSubmit, showSuccessAlert }) {
               name="CIN"
               value={userData.CIN}
               onChange={handleChange}
-              placeholder="tensio pression"
+              placeholder="Numero de la carte Nationale"
             />
           </div>
         </div>

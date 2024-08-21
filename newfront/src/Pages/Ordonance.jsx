@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../Components/Header'
-import PrescriptionForm from '../Components/Ordonance/PrescriptionForm'
+import CertificateForm from '../Components/CertifMedical/CertificateForm'
 
 const Ordonance = () => {
   return (
     <div>
             <Header/>
-        <PrescriptionForm/>
+        <CertificateForm/>
     </div>
   )
 }

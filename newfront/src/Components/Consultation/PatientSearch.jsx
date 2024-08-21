@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 function PatientSearch({ onAddToQueue, SuccessAdd }) {
     const [patients, setPatients] = useState([]);
     const [filteredPatients, setFilteredPatients] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
+    const inputRef = useRef(null); // Ref for the input field
 
     useEffect(() => {
         const fetchPatients = async () => {
@@ -33,9 +34,21 @@ function PatientSearch({ onAddToQueue, SuccessAdd }) {
         }
     };
 
+    const handleAddToQueue = (patient) => {
+        onAddToQueue(patient);
+        // Clear the search field and filtered list
+        setSearchTerm('');
+        setFilteredPatients([]);
+        // Make the input lose focus
+        if (inputRef.current) {
+            inputRef.current.blur();
+        }
+    };
+
     return (
         <div>
             <input
+                ref={inputRef} // Attach the ref to the input field
                 type="text"
                 placeholder="Search patients by name..."
                 value={searchTerm}
@@ -57,7 +70,7 @@ function PatientSearch({ onAddToQueue, SuccessAdd }) {
                                 <td className="py-2 px-4">
                                     <button
                                         className="bg-blue-500 text-white py-1 px-3 rounded"
-                                        onClick={() => onAddToQueue(patient)}
+                                        onClick={() => handleAddToQueue(patient)}
                                     >
                                         Add to Queue
                                     </button>
@@ -70,4 +83,5 @@ function PatientSearch({ onAddToQueue, SuccessAdd }) {
         </div>
     );
 }
+
 export default PatientSearch;

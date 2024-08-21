@@ -9,11 +9,7 @@ import Consultation from './Pages/Consultation';
 import Login from './Pages/Login';
 import { AuthProvider } from './Components/Login/AuthContext';
 import PrivateRoute from './Components/Login/PrivateRoute';
-import Ordonance from './Pages/Ordonance';
-import MedicalCertificate from './Pages/MedicalCertificate';
-import PDFPreview from './Components/Ordonance/PDFPreview';
-
-MedicalCertificate
+import Ordonance from './Pages/Ordonance';	 
 const App = () => {
   return (
     <AuthProvider>
@@ -21,16 +17,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />   
           <Route path="/Contact" element={<Contact />} />  
-          PrescriptionDocument
-          <Route path="/About" element={<About />} />  
-          <Route path="/PDFPreview" element={<PDFPreview />} />  
-          <Route path="/MedicalCertificate" element={<MedicalCertificate />} />  
+           <Route path="/About" element={<About />} />  
         <Route path="/login" element={<Login />} />
 
         {/* Protected routes */}
         <Route element={<PrivateRoute />}>
+          <Route path="/Ordonance" element={<Ordonance />} />  
           <Route path="/Patient" element={<Patient />} />  
-          <Route path="/Oradonance" element={<Ordonance />} />  
           <Route path="/Consultation" element={<Consultation />} />  
         </Route>
       </Routes>
